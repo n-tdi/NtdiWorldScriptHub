@@ -1,30 +1,32 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+local Flags = Library.Flags
+local playerHead = game.Players.LocalPlayer.Character.Head;
 
-local Finity = loadstring(game:HttpGet("https://raw.githubusercontent.com/LocalSmail/Finity/main/Library"))()
-local Player = game.Players.LocalPlayer;
+_G.AutoFarmWins = false;
 
-_G.farmWins = false
+local Autofarm = Library:Window({
+  Text = "Autofarm"
+})
 
-local FinityWindow = Finity.new("Ntdi World", true, nil, nil, false, nil) 
-    
-local AutoCategory = FinityWindow:Category("Auto")
+Autofarm:Toggle({
+  Text = "Farm Wins",
+  Callback = function(bool)
+    _G.AutoFarmWins = bool
+  end
+})
 
-local AfkSector = AutoCategory:Sector("AFK")
+Autofarm:Keybind({
+  Text = "Toggle Library",
+  Default = Enum.KeyCode.F4,
+  Callback = function()
+      Library:Toggle()
+  end
+})
 
-local AfkCheat = AfkSector:Cheat("Button", "AFK Farm", function ()
-    farmWins = not farmWins
-end, {})
-
-while true do
-    if _G.farmWins then
-        Player.Character.Humanoid.RootPart.CFrame = game:GetService("Workspace").Wins.Stage10.CFrame
-        Player.Character.Humanoid:MoveTo(Vector3.new(-33.3600082, 1.7280035, 10360.124))
-        wait(0.5)
-        Player.Character.Humanoid:MoveTo(Vector3.new(-22.3600082, 1.7280035, 10360.124))
-        wait(0.5)
-        Player.Character.Humanoid:MoveTo(Vector3.new(-33.3600082, 1.7280035, 10360.124))
-        wait(0.5)
-        Player.Character.Humanoid:MoveTo(Vector3.new(-22.3600082, 1.7280035, 10360.124))
-    end
-
-    wait(0.1)
+while wait() do
+  if _G.AutoFarmWins then
+    firetouchinterest(playerHead, game:GetService("Workspace").Wins.Stage10, 0)
+    wait(0.01)
+    firetouchinterest(playerHead, game:GetService("Workspace").Wins.Stage10, 1)
+  end
 end
