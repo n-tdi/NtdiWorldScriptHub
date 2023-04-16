@@ -2,7 +2,7 @@
 local Finity = loadstring(game:HttpGet("https://raw.githubusercontent.com/LocalSmail/Finity/main/Library"))()
 local Player = game.Players.LocalPlayer;
 
-local farmWins = false
+_G.farmWins = false
 
 local FinityWindow = Finity.new("Ntdi World", true, nil, nil, false, nil) 
     
