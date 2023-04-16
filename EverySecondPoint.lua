@@ -15,7 +15,7 @@ local AfkCheat = AfkSector:Cheat("Button", "AFK Farm", function ()
 end, {})
 
 while true do
-    if farmWins then
+    if _G.farmWins then
         Player.Character.Humanoid.RootPart.CFrame = game:GetService("Workspace").Wins.Stage10.CFrame
         Player.Character.Humanoid:MoveTo(Vector3.new(-33.3600082, 1.7280035, 10360.124))
         wait(0.5)
