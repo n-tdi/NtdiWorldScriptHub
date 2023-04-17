@@ -45,8 +45,6 @@ Auto:Keybind({
   end
 })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/n-tdi/NtdiWorldScriptHub/main/Universal.lua"))()
-
 while wait() do
     if _G.AutoRestock then
         teleportToAndClick(coffeMaker)
