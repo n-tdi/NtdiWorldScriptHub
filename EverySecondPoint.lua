@@ -23,8 +23,6 @@ Autofarm:Keybind({
   end
 })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/n-tdi/NtdiWorldScriptHub/main/Universal.lua"))()
-
 while wait() do
   if _G.AutoFarmWins then
     firetouchinterest(playerHead, game:GetService("Workspace").Wins.Stage10, 0)
