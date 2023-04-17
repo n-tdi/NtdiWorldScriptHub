@@ -72,6 +72,8 @@ function teleportToRandomHider()
     end
 end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/n-tdi/NtdiWorldScriptHub/main/Universal.lua"))()
+
 while wait() do
   if _G.teleportToHiders then
     teleportToRandomHider()
